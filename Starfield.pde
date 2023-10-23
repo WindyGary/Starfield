@@ -1,20 +1,32 @@
-//your code here
+Particle[] dust = new Particle[100];
 void setup()
 {
-	//your code here
+  size(600, 600);
+  for (int i = 0; i < dust.length; i++) {
+    dust[i] = new Particle();
+  }
 }
 void draw()
 {
-	//your code here
+  for (int i = 0; i < dust.length; i++) {
+    dust[i].show();
+  }
 }
 class Particle
 {
-	//your code here
+  double myX, myY, myColor;
+  Particle() {
+  }
+
+  void move() {
+  }
+
+  void show() {
+    ellipse(10, 10, 10, 10);
+  }
 }
 
 class OddballParticle //inherits from Particle
 {
-	//your code here
+  //your code here
 }
-
-
