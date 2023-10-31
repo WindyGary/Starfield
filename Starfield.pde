@@ -1,5 +1,6 @@
 Particle[] dust = new Particle[1000];
 int i = 0;
+int moveOther = 0;
 void setup()
 {
   size(600, 600);
@@ -15,6 +16,11 @@ void draw()
     dust[i].show();
     dust[i].move();
   }
+
+  if (dust[0].myX > 550 || dust[0].myX < 0 || dust[0].myY > 550 || dust[0].myY < 0){
+    moveOther++;
+      System.out.println(moveOther);
+}
 }
 class Particle
 {
@@ -32,15 +38,8 @@ class Particle
 
   void move() {
 
-    if (dust[0].myX >= 550 || dust[0].myX <= 0 || dust[0].myY <= 0 || dust[0].myY >= 550) {
-      dust[0].myX = 100;
-      dust[0].myY = 100;
-      i++;
-      System.out.println(i);
-    } else {
-      myX += cos((float)myAngle) * mySpeed;
-      myY += sin((float)myAngle) * mySpeed;
-    }
+    myX += cos((float)myAngle) * mySpeed;
+    myY += sin((float)myAngle) * mySpeed;
   }
 
   void show() {
@@ -65,5 +64,15 @@ class OddballParticle extends Particle//inherits from Particle
   void show() {
     fill (myColor);
     rect((float)myX, (float)myY, (float)myLength, (float)myWidth);
+  }
+  void move() {
+
+    if (moveOther % 2 == 0) {
+      myX += cos((float)myAngle) * mySpeed;
+      myY += sin((float)myAngle) * mySpeed;
+    } else{
+      myX -= cos((float)myAngle) * mySpeed;
+      myY -= sin((float)myAngle) * mySpeed;
+    }
   }
 }
