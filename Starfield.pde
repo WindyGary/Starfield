@@ -19,8 +19,7 @@ void draw()
 
   if (dust[0].myX > 550 || dust[0].myX < 0 || dust[0].myY > 550 || dust[0].myY < 0){
     moveOther++;
-      System.out.println(moveOther);
-}
+  }
 }
 class Particle
 {
