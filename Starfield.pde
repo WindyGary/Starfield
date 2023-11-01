@@ -56,7 +56,7 @@ class OddballParticle extends Particle//inherits from Particle
     myX = 300;
     myY = 300;
     myAngle = (Math.random()*2)*Math.PI;
-    mySpeed = (Math.random()*5);
+    mySpeed = (Math.random()*5)+1;
     myColor = color(255);
     myLength = 50;
     myWidth = 50;
